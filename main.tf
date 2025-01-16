@@ -1,9 +1,9 @@
 provider "aws" {
-  region = var.aws_region # Change the region as per your requirement
+  region = var.aws_region
 }
 
 resource "aws_instance" "jenkins" {
-  ami                    = var.ami # Amazon Linux 2 AMI
+  ami                    = var.ami
   instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.jenkins-sg.id]
   subnet_id              = aws_subnet.main_subnet.id
